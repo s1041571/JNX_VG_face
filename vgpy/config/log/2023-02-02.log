@@ -1,0 +1,34 @@
+2023-02-02 09:10:57.111 [wearing_detector_torch.py] INFO    | 穿戴:config初始載入中...
+2023-02-02 09:11:26.188 [wearing_detector_torch.py] INFO    | 穿戴:MergePredictor初始化辨識完成
+2023-02-02 09:11:26.209 [wearing_detector_torch.py] INFO    | 穿戴:MergePredictor初始化成功
+2023-02-02 09:11:26.209 [wearing_detector_torch.py] INFO    | 穿戴:config初始載入成功
+2023-02-02 09:11:40.132 [wearing_api.py] INFO    | 穿戴: yolo_detector初始化完成
+2023-02-02 15:28:31.494 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:28:36.182 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-02 15:28:37.846 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-02 15:30:39.779 [face_api.py] INFO    | 辨識登入門檻值設定變更成功
+2023-02-02 15:30:43.469 [main.py] INFO    | 有正在執行的子系統，嘗試關閉中...
+2023-02-02 15:30:43.469 [main.py] ERROR   | main:terminate current subprocess failed, 'Thread' object has no attribute 'terminate'
+2023-02-02 15:30:43.490 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:30:44.165 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:30:57.782 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-02 15:30:59.732 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-02 15:31:26.988 [main.py] INFO    | 有正在執行的子系統，嘗試關閉中...
+2023-02-02 15:31:26.989 [main.py] ERROR   | main:terminate current subprocess failed, 'Thread' object has no attribute 'terminate'
+2023-02-02 15:31:27.006 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:31:27.505 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:36:06.123 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-02 15:36:07.210 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-02 15:51:44.147 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:51:58.237 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-02 15:51:59.830 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-02 15:54:56.390 [main.py] INFO    | 有正在執行的子系統，嘗試關閉中...
+2023-02-02 15:54:56.393 [main.py] ERROR   | main:terminate current subprocess failed, 'Thread' object has no attribute 'terminate'
+2023-02-02 15:54:56.428 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:54:57.087 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:55:01.722 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-02 15:55:03.442 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-02 15:55:40.469 [main.py] INFO    | 有正在執行的子系統，嘗試關閉中...
+2023-02-02 15:55:40.470 [main.py] ERROR   | main:terminate current subprocess failed, 'Thread' object has no attribute 'terminate'
+2023-02-02 15:55:40.484 [main.py] INFO    | 進入VG主頁
+2023-02-02 15:55:41.178 [main.py] INFO    | 進入VG主頁

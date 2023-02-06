@@ -1,0 +1,95 @@
+.file_list_o_footer {
+    letter-spacing: 0.03rem;
+}
+.file_list_x_footer {
+    letter-spacing: 0.03rem;
+}
+
+.modal_file_list {
+    overflow-y: scroll;
+    height: 100% !important;
+    max-height: 400px;
+}
+.modal_file_list::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+.modal_file_list::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #999898;
+    /* background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%); */
+}
+
+.modal_file_list::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 5px rgba(220, 222, 224, 0.75);
+    border-radius: 10px;
+    background: #ededed;
+}
+
+.modal_file_footer {
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    background: #7584f2;
+    color: white;
+    line-height: 2.25;
+    text-shadow: 0 0 5px rgba(127, 140, 141, 0.7);
+    font-weight: 500;
+}
+
+.card-left-icon {
+    position: absolute;
+    top: -3px;
+    left: 16px;
+    text-align: left;
+}
+#list_icon_text {
+    background: #fb9f24;
+    color: #fff;
+    border-radius: 19px;
+    width: 95px;
+    height: 55px;
+}
+
+.list_clear_btn {
+    border-radius: 18px;
+    position: absolute;
+    top: 1%;
+    right: 5%;
+}
+#live_icon {
+    /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+    animation-name: breath; /* 动画名称 */
+    animation-duration: 1500ms; /* 动画时长3秒 */
+    animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+    animation-iteration-count: infinite; /* 播放次数：无限 */
+
+    /* Safari and Chrome */
+    -webkit-animation-name: breath; /* 动画名称 */
+    -webkit-animation-duration: 1500ms; /* 动画时长3秒 */
+    -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+    -webkit-animation-iteration-count: infinite; /* 播放次数：无限 */
+}
+@keyframes breath {
+    from {
+        opacity: 0.3;
+    } /* 动画开始时的不透明度 */
+    50% {
+        opacity: 1;
+    } /* 动画50% 时的不透明度 */
+    to {
+        opacity: 0.3;
+    } /* 动画结束时的不透明度 */
+}
+
+@-webkit-keyframes breath {
+    from {
+        opacity: 0.3;
+    } /* 动画开始时的不透明度 */
+    50% {
+        opacity: 1;
+    } /* 动画50% 时的不透明度 */
+    to {
+        opacity: 0.3;
+    } /* 动画结束时的不透明度 */
+}

@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:500");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+/* @font-face {
+    font-family: 'Noto-Sans-TC';
+    src: url('../font/NotoSansTC-Bold.woff') format('woff');
+} */
+/* body{
+    font-family:'Muli','Noto Sans TC', '微軟正黑體';
+} */
+/* .bootstrap-table .fixed-table-container .table tbody tr.selected td
+{
+    background-color: lightcyan;
+} */
+.bootstrap-table .fixed-table-container .table th{
+    color: white;
+    background-color: #6c757d;
+}
+.page-title{
+    font-family: 'Ubuntu','Noto Sans TC', '微軟正黑體' ;
+    border-left: 6px solid #53D2DC ;
+    /* border-right: 6px solid #53D2DC ; */
+    border-radius: 2px;
+    padding: 3px 7px;
+    margin-left: 5px;
+}
+
+#nav-btn button{ 
+    width: 65px; 
+    height:  65px; 
+    padding: 7px 10px; 
+    border: 1.5px solid #ecf0f1;
+    border-radius: 35px; 
+    font-size: 20px; 
+    text-align: center; 
+    z-index: 15;
+    margin: 0 3px;
+    background-color: #fff;
+} 
+#nav-btn button:hover{
+    color:#bdc3c7;
+}
+/* #nav-btn-top li:hover{
+    background-color:rgba(255, 233, 111, 0.35);
+} */
+
+#rec_icon {
+    opacity: 0.1;                                   /* 不透明度 */
+    overflow: hidden;                               /* 溢出隐藏 */
+  
+    /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+    animation-name: breath;                         /* 动画名称 */
+    animation-duration: 1700ms;                         /* 动画时长3秒 */
+    animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
+    animation-iteration-count: infinite;            /* 播放次数：无限 */
+ 
+    /* Safari and Chrome */
+    -webkit-animation-name: breath;                 /* 动画名称 */
+    -webkit-animation-duration: 1700ms;                 /* 动画时长3秒 */
+    -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+    -webkit-animation-iteration-count: infinite;    /* 播放次数：无限 */
+}
+ 
+@keyframes breath {
+    from { opacity: 0.1; }                          /* 动画开始时的不透明度 */
+    50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
+    to   { opacity: 0.1; }                          /* 动画结束时的不透明度 */    
+}
+ 
+@-webkit-keyframes breath {
+    from { opacity: 0.1; }                          /* 动画开始时的不透明度 */
+    50%  { opacity:   1; }                          /* 动画50% 时的不透明度 */
+    to   { opacity: 0.1; }                          /* 动画结束时的不透明度 */
+}

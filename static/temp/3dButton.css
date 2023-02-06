@@ -1,0 +1,148 @@
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap"); */
+.button3d {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  position: relative;
+  border: 0.25rem solid rgba(255, 255, 255, 0.5) ;
+  /* margin-bottom: 25px; */
+  border-radius: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+body .button3d span {
+  /* line-height: 100px; */
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 32px;
+  /* font-weight: semibold; */
+}
+body .button3d:nth-child(1) {
+  box-shadow: -6px -6px 10px rgba(243,240,241, 0.6), 6px 6px 15px rgba(223,221,221, 0.5);
+  color: #6f6cde;
+}
+body .button3d:nth-child(1):hover {
+  opacity: 0.3;
+  box-shadow: -6px -6px 10px rgba(243,240,241, 0.8), 6px 6px 10px rgba(223,221,221, 0.2);
+}
+body .button3d:nth-child(1):active {
+  opacity: 1;
+  box-shadow: inset -4px -4px 8pxrgba(243,240,241, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  color: #dddddf;
+}
+body .button:nth-child(2) {
+  opacity: 0.3;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+  color: #6f6cde;
+}
+body .button:nth-child(3) {
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  color: #79e3b6;
+}
+body .button:nth-child(3):hover {
+  opacity: 1;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 警報清除按鈕 */
+#alarm-clear-div{
+  box-shadow: 5px 6px 10px 0 rgba(112,112,112,0.5);
+  position: absolute;
+  top:275px;
+}
+
+.btn-alarmclear {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px -6px rgba(0,0,0,0.3);
+  transition: all 0.1s ease;
+  z-index: 15;
+}
+.btn-alarmclear .--icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #fde395;
+  float: left;
+  border-radius: 8px 0 0 8px ;
+}
+.btn-alarmclear .--icon #img-icon {
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+.btn-alarmclear .--icon .circle-inner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(255, 86, 86,0.75);
+  margin: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+  animation-name: breath; /* 动画名称 */
+  animation-duration: 2000ms; /* 动画时长3秒 */
+  animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+  animation-iteration-count: infinite; /* 播放次数：无限 */
+
+  /* Safari and Chrome */
+  -webkit-animation-name: breath; /* 动画名称 */
+  -webkit-animation-duration: 2000ms; /* 动画时长3秒 */
+  -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+  -webkit-animation-iteration-count: infinite; /* 播放次数：无限 */
+}
+.btn-alarmclear .--icon .circle-outer {
+  position: absolute;
+  margin: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 26px;
+  background: rgba(2255, 86, 86,0.5);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+ 
+  /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+  animation-name: breath; /* 动画名称 */
+  animation-duration: 2200ms; /* 动画时长3秒 */
+  animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+  animation-iteration-count: infinite; /* 播放次数：无限 */
+
+  /* Safari and Chrome */
+  -webkit-animation-name: breath; /* 动画名称 */
+  -webkit-animation-duration: 2200ms; /* 动画时长3秒 */
+  -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+  -webkit-animation-iteration-count: infinite; /* 播放次数：无限 */
+}
+.btn-alarmclear .btn-text {
+  float: left;
+  color: #000;
+  white-space: nowrap;
+  line-height: 20px;
+  height: 60px;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+}
+.btn-alarmclear:hover .--icon #img-icon {
+  transform: translateY(0px) scale(0.83333);
+  width: 45px;
+}
+.btn-alarmclear:hover .btn-text {
+  color: #000;
+}
+.btn-alarmclear:active {
+  transform: translateY(1px);
+}
+@keyframes breath {
+  from {
+      opacity: 0.3;
+  } /* 动画开始时的不透明度 */
+  50% {
+      opacity: 1;
+  } /* 动画50% 时的不透明度 */
+  to {
+      opacity: 0.3;
+  } /* 动画结束时的不透明度 */
+}
