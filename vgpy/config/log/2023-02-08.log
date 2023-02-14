@@ -1,0 +1,199 @@
+2023-02-08 09:08:16.621 [main.py] INFO    | 進入VG主頁
+2023-02-08 09:08:19.392 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 09:08:20.843 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:09:19.892 [face_api.py] INFO    | 進入人臉註冊頁
+2023-02-08 09:09:30.825 [face_backend.py] INFO    | 人臉:註冊人臉資料 建檔成功
+2023-02-08 09:09:38.668 [face_api.py] INFO    | 進入人臉註冊頁
+2023-02-08 09:09:43.157 [face_api.py] INFO    | 進入人臉模型訓練頁
+2023-02-08 09:09:48.773 [face_api.py] INFO    | 執行人臉模型訓練
+2023-02-08 09:09:48.900 [face_backend.py] INFO    | 人臉:人臉模型訓練subprocess啟動
+2023-02-08 09:09:48.902 [face_backend.py] INFO    | 人臉:訓練中...
+2023-02-08 09:14:20.206 [face_backend.py] INFO    | 人臉:訓練完成
+2023-02-08 09:14:22.690 [main.py] INFO    | 有正在執行的子系統，嘗試關閉中...
+2023-02-08 09:14:22.692 [main.py] ERROR   | main:terminate current subprocess failed, 'Thread' object has no attribute 'terminate'
+2023-02-08 09:14:22.720 [main.py] INFO    | 進入VG主頁
+2023-02-08 09:14:24.812 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 09:14:26.949 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:14:40.196 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:14:42.245 [face_api.py] INFO    | 進入人臉模型訓練頁
+2023-02-08 09:14:45.762 [face_api.py] INFO    | 進出權限人員名單 更新成功
+2023-02-08 09:15:16.417 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:34:35.415 [main.py] INFO    | 進入VG主頁
+2023-02-08 09:34:37.350 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 09:34:38.285 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:39:15.303 [main.py] INFO    | 進入VG主頁
+2023-02-08 09:39:17.786 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 09:39:18.824 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:46:21.451 [main.py] INFO    | 進入VG主頁
+2023-02-08 09:46:23.971 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 09:46:24.907 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:48:40.535 [main.py] INFO    | 進入VG主頁
+2023-02-08 09:48:42.893 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 09:48:43.888 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:49:42.692 [main.py] INFO    | 進入VG主頁
+2023-02-08 09:49:45.242 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 09:49:45.925 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 09:53:28.533 [main.py] INFO    | 進入VG主頁
+2023-02-08 09:53:30.818 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 09:53:31.814 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:04:18.629 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:04:20.720 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:04:21.617 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:07:17.966 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:07:20.035 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:07:21.122 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:11:15.923 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:11:17.786 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:11:18.732 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:15:50.453 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:15:52.786 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:15:53.749 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:16:14.956 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 10:19:00.908 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:19:02.563 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:19:03.357 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:34:28.268 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:34:30.335 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:34:31.281 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:34:58.184 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 10:35:13.225 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 10:35:54.566 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 10:36:04.925 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 10:39:17.865 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:39:30.333 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:39:31.155 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:41:11.086 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 10:51:13.241 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:51:15.129 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:51:15.863 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:51:52.219 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 10:58:33.914 [main.py] INFO    | 進入VG主頁
+2023-02-08 10:58:36.152 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 10:58:37.087 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 10:58:56.816 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 11:08:13.798 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:08:15.841 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:08:16.790 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:15:16.460 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:15:18.793 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:15:19.493 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:17:53.304 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:17:55.167 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:17:55.973 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:20:21.553 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:20:23.584 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:20:24.398 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:22:41.356 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:22:43.051 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:22:44.050 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:24:40.652 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:24:43.489 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:24:44.416 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:30:13.246 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:30:15.210 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:30:16.072 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:30:57.626 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 11:31:59.720 [main.py] INFO    | 有正在執行的子系統，嘗試關閉中...
+2023-02-08 11:31:59.739 [main.py] ERROR   | main:terminate current subprocess failed, 'Thread' object has no attribute 'terminate'
+2023-02-08 11:31:59.749 [face_backend.py] INFO    | 人臉:收到[END_PROCESS]的signal
+2023-02-08 11:31:59.813 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:32:01.770 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:32:03.470 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:38:09.512 [main.py] INFO    | 進入VG主頁
+2023-02-08 11:38:11.553 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 11:38:12.214 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 11:39:39.738 [face_api.py] INFO    | 進入人臉註冊頁
+2023-02-08 11:40:06.376 [face_api.py] INFO    | 進入人臉註冊頁
+2023-02-08 11:40:14.405 [face_api.py] INFO    | 進入人臉模型訓練頁
+2023-02-08 12:01:57.251 [main.py] INFO    | 進入VG主頁
+2023-02-08 12:01:59.043 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 12:01:59.715 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 12:06:29.855 [main.py] INFO    | 進入VG主頁
+2023-02-08 12:06:32.041 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 12:06:32.822 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:11:48.464 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:11:52.763 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:11:53.543 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:14:13.584 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:14:16.229 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:14:17.198 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:16:54.060 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 13:17:08.187 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 13:20:04.376 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:20:06.513 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:20:07.519 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:22:37.540 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:22:40.154 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:22:41.035 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:25:06.353 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:25:09.018 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:25:09.787 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:27:52.428 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:27:54.579 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:27:55.649 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:35:13.460 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:35:19.381 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:35:20.611 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:36:20.189 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:36:22.507 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:36:23.508 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:38:56.008 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:38:58.089 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:38:58.955 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:45:02.001 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:45:04.098 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:45:05.119 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:49:00.538 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:49:02.777 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:49:03.616 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:50:38.840 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:50:40.425 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:50:41.274 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 13:52:30.531 [main.py] INFO    | 進入VG主頁
+2023-02-08 13:52:32.105 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 13:52:32.943 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 14:00:38.890 [main.py] INFO    | 進入VG主頁
+2023-02-08 14:00:41.097 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 14:00:42.045 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 14:02:56.208 [main.py] INFO    | 進入VG主頁
+2023-02-08 14:02:58.091 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 14:02:59.015 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 14:04:33.146 [main.py] INFO    | 進入VG主頁
+2023-02-08 14:04:35.232 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 14:04:36.233 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 14:07:03.089 [main.py] INFO    | 進入VG主頁
+2023-02-08 14:07:10.843 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 14:07:11.801 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 14:09:03.732 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 14:09:18.763 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 14:09:33.773 [face_backend.py] INFO    | 人臉:收到[UNLOCK_DOOR]的signal
+2023-02-08 14:12:29.813 [main.py] INFO    | 進入VG主頁
+2023-02-08 14:12:31.848 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 14:12:32.689 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 14:14:47.547 [main.py] INFO    | 進入VG主頁
+2023-02-08 14:14:50.530 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 14:14:51.350 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 14:59:04.921 [main.py] INFO    | 進入VG主頁
+2023-02-08 14:59:07.055 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-08 17:40:28.240 [main.py] INFO    | 進入VG主頁
+2023-02-08 17:40:30.184 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 17:41:05.853 [face_backend.py] INFO    | 人臉:成功儲存新設定的圍籬區域:
+[[(245, 117), (956, 111), (1105, 965), (63, 928)]]
+2023-02-08 17:41:05.858 [face_api.py] INFO    | 虛擬圍籬設定成功
+2023-02-08 17:41:11.578 [face_backend.py] INFO    | 人臉:成功儲存新設定的圍籬區域:
+[[(245, 117), (956, 111), (1105, 965), (63, 928)]]
+2023-02-08 17:41:11.580 [face_api.py] INFO    | 虛擬圍籬設定成功
+2023-02-08 17:41:21.325 [face_backend.py] INFO    | 人臉:成功儲存新設定的圍籬區域:
+[[(472, 90), (1759, 57), (1729, 1013), (423, 989)]]
+2023-02-08 17:41:21.327 [face_api.py] INFO    | 虛擬圍籬設定成功
+2023-02-08 17:41:27.728 [face_backend.py] INFO    | 人臉:成功儲存新設定的圍籬區域:
+[[(472, 90), (1759, 57), (1729, 1013), (423, 989)]]
+2023-02-08 17:41:27.730 [face_api.py] INFO    | 虛擬圍籬設定成功
+2023-02-08 17:50:41.687 [main.py] INFO    | 進入VG主頁
+2023-02-08 17:50:43.875 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 17:51:35.636 [face_backend.py] INFO    | 人臉:成功儲存新設定的圍籬區域:
+[[(471, 92), (1757, 57), (1730, 1013), (422, 987)]]
+2023-02-08 17:51:35.642 [face_api.py] INFO    | 虛擬圍籬設定成功
+2023-02-08 17:53:25.747 [main.py] INFO    | 進入VG主頁
+2023-02-08 17:53:27.691 [face_api.py] INFO    | 進入人臉管制(UI)登入頁
+2023-02-08 17:53:35.031 [face_api.py] INFO    | 辨識登入門檻值設定變更成功

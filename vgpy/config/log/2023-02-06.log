@@ -1,0 +1,4 @@
+2023-02-06 13:15:04.222 [main.py] INFO    | 進入VG主頁
+2023-02-06 14:32:55.453 [main.py] INFO    | 進入VG主頁
+2023-02-06 14:32:58.852 [face_backend.py] INFO    | 人臉: subprocess啟動
+2023-02-06 14:33:00.907 [face_api.py] INFO    | 進入人臉管制(UI)登入頁

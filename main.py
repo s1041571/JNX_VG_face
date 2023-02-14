@@ -223,9 +223,8 @@ def change_cam(new_camid):
     capture = new_capture
     globalvar.cam_id = new_camid
     globalvar.cam_wh = (capture.camera_width, capture.camera_height)
-    save_config(cam_config_path, 'cam_config', 'last_cam_id', str(new_camid))    
-    streaming_queues.c_queue.put(GlobalVar.SIGNAL.CHANGE_CAM_ID)
-    streaming_queues.c_queue.put((new_camid, globalvar.cam_wh))
+    save_config(cam_config_path, 'cam_config', 'last_cam_id', str(new_camid))
+    face_main.faceTool.change_cam_id(new_camid, globalvar.cam_wh)
     return "攝影機切換成功"
 
 #====== 攝影機讀取 + 預測 + 串流到網頁 ======#
@@ -249,66 +248,61 @@ def camera_read_predict_stream(page):
             current_frame = capture.getframe()
 
             if current_frame is not None:
+                # 人臉辨識
+                if page == "faceIndex":
+                    result_img, resultInfo = face_main.faceTool.get_detection_result(current_frame)
+                    detectionObject.resultImg = result_img
+                    detectionObject.resultInfo = resultInfo.face_identify_result
+                    if resultInfo.face_identify_result is not None: 
+                        facevar.update(resultInfo)   # 更新臉部特徵影像frame
+                        # dataBaseUtils.write_into_DB(resultInfo.face_identify_result) # write face result into DB
 
-                if streaming_queues.c_queue.empty():
-                    # 人臉辨識
-                    if page == "faceIndex":
-                        result_img, resultInfo = faceTool.get_detection_result(current_frame)
-                        detectionObject.resultImg = result_img
-                        detectionObject.resultInfo = resultInfo.face_identify_result
-                        if resultInfo.face_identify_result is not None: 
-                            facevar.update(resultInfo)   # 更新臉部特徵影像frame
-                            # dataBaseUtils.write_into_DB(resultInfo.face_identify_result) # write face result into DB
+                elif page == "faceRegister":
+                    result_img = current_frame
 
-                    elif page == "faceRegister":
-                        result_img = current_frame
-
-                    elif page == "faceFence":
-                        result_img = current_frame
-
-                    else:
-                        # 控制佇列沒有訊號時，才將照片送進去 data_queue 並等待辨識結果
-                        streaming_queues.d_queue.put(current_frame)
-                        try:
-                            results = streaming_queues.r_queue.get()
-                            # 辨識的 Process 回傳多個 變數
-                            if type(results) is list: # 這種型態的回傳，目前應該只有人臉、動作有 
-                                for r in results:
-                                    if type(r) is ProcessVar.ProcessResult:  #NOTE:動作多回傳肢體節點影像
-                                        result_img = r.result_img
-                                        current_pose = r.current_pose
-                                        processvar.current_pose = current_pose
-                                    elif type(r) == ProcessVar:
-                                        processvar.update(r) # 更新肢體節點影像frame
-                            
-                            # 「流程辨識」完成 要切換成 非 辨識中
-                            elif results is ProcessVar.SIGNAL.PROCESS_FINISHED:
-                                globalvar.click_start = False
-                                processvar.current_pose = '__流程完成__'
-
-                            # # 「流程辨識」的回傳結果，包括 辨識後的圖片 及 目前的動作
-                            # elif type(results) is ProcessVar.ProcessResult:
-                            #     result_img = results.result_img
-                            #     current_pose = results.current_pose
-                            #     processvar.current_pose = current_pose
-                            
-                            # 僅回傳辨識結果
-                            else:
-                                result_img = results
-                                                    
-                        except Exception as e:
-                            result_img = current_frame
-                            logger.error(f'main:cannot get result_queue, {e}')
+                elif page == "faceFence":
+                    result_img = current_frame
 
                 else:
-                    result_img = current_frame
+                    # 控制佇列沒有訊號時，才將照片送進去 data_queue 並等待辨識結果
+                    streaming_queues.d_queue.put(current_frame)
+                    try:
+                        results = streaming_queues.r_queue.get()
+                        # 辨識的 Process 回傳多個 變數
+                        if type(results) is list: # 這種型態的回傳，目前應該只有人臉、動作有 
+                            for r in results:
+                                if type(r) is ProcessVar.ProcessResult:  #NOTE:動作多回傳肢體節點影像
+                                    result_img = r.result_img
+                                    current_pose = r.current_pose
+                                    processvar.current_pose = current_pose
+                                elif type(r) == ProcessVar:
+                                    processvar.update(r) # 更新肢體節點影像frame
+                        
+                        # 「流程辨識」完成 要切換成 非 辨識中
+                        elif results is ProcessVar.SIGNAL.PROCESS_FINISHED:
+                            globalvar.click_start = False
+                            processvar.current_pose = '__流程完成__'
+
+                        # # 「流程辨識」的回傳結果，包括 辨識後的圖片 及 目前的動作
+                        # elif type(results) is ProcessVar.ProcessResult:
+                        #     result_img = results.result_img
+                        #     current_pose = results.current_pose
+                        #     processvar.current_pose = current_pose
+                        
+                        # 僅回傳辨識結果
+                        else:
+                            result_img = results
+                                                
+                    except Exception as e:
+                        result_img = current_frame
+                        logger.error(f'main:cannot get result_queue, {e}')
                 
             else:
                 result_img = not_connected_img
                 result_img = put_zh_text_opencv(
                     result_img, f'Cam:{globalvar.cam_id}', (10,10), color.白色, fsize=font_size
                 )
-
+    
             if result_img is not None:
                 (flag, encodedImage) = cv2.imencode(".jpg", result_img)  #資料格式轉換為.jpg    
                 if flag: # ensure the frame was successfully encoded
@@ -375,8 +369,8 @@ def start_app(app_name):
     # if app_name == "vf":
     #     globalvar.current_process = vf_main.app_vf_start()
     
-    if app_name == 'face':
-        globalvar.current_process = faceTool.app_face_start()
+    # if app_name == 'face':
+    #     globalvar.current_process = faceTool.app_face_start()
     
     current_app = app_name
     is_app_running = True
@@ -412,7 +406,7 @@ def vg_index():
             streaming_queues.c_queue.put(GlobalVar.SIGNAL.END_PROCESS)
             try:
                 # 當回到主頁時，會嘗試把目前正在執行的 process 終止掉，主要是為了釋放 GPU的顯存
-                globalvar.current_process.terminate()
+                # globalvar.current_process.terminate()
                 logger.info("關閉成功")
             except Exception as e:
                 logger.error(f'main:terminate current subprocess failed, {e}')
@@ -554,12 +548,12 @@ if __name__ == '__main__':
 
     # 人臉辨識 初始化
     from vgpy.face.face_api import FaceMain, FaceVar
-    from vgpy.face.face_backend import FaceDetectorTool
+    # from vgpy.face.face_backend import FaceDetectorTool
     from vgpy.face.config.ObjectManager import DetectionManger
     detectionObject = DetectionManger.get_detectionVar_object()
     facevar = FaceVar()
     face_main = FaceMain(streaming_queues, facevar, globalvar)
-    faceTool = FaceDetectorTool(streaming_queues, globalvar, facevar)
+    # faceTool = FaceDetectorTool(streaming_queues, globalvar, facevar)
     app_face = face_main.face_app_init()
     app.register_blueprint(app_face, url_prefix='/face')
     

@@ -8,6 +8,7 @@ from flask import Blueprint, request, render_template, Response, redirect, url_f
 from flask_login import current_user, login_required, logout_user
 
 from . import face_backend as fbackend
+from .face_backend import FaceDetectorTool
 from ..global_object import StreamingQueues, GlobalVar
 from ..global_function import get_administrator_dict
 from enum import Enum, auto
@@ -72,12 +73,14 @@ class FaceMain:
         self.streaming_queues = q
         self.facevar = facevar
         self.globalvar = globalvar
+        self.faceTool = FaceDetectorTool(q, globalvar, facevar)
 
     def __model_train_and_update(self):
         res = fbackend.face_model_train()
         # res = fbackend.face_model_train_old()      
         self.facevar.model_train_result = res.split(',')
-        self.streaming_queues.c_queue.put(FaceVar.SIGNAL.RELOAD_FRATURE) # 訓練後要更新 新的 Feature進去
+        # self.streaming_queues.c_queue.put(FaceVar.SIGNAL.RELOAD_FRATURE) # 訓練後要更新 新的 Feature進去
+        self.faceTool.init_detector_object()
         # return result
 
     def face_app_init(self):
@@ -108,8 +111,9 @@ class FaceMain:
             data_arr = data.split(',')
             identify_default_time = int(data_arr[1])
             frame_default_number = int(data_arr[0])        
-            q.c_queue.put(FaceVar.SIGNAL.CLICK_CHANGE_SETTING)
-            q.c_queue.put((identify_default_time, frame_default_number))
+            self.faceTool.set_default_time_and_num(identify_default_time, frame_default_number)
+            # q.c_queue.put(FaceVar.SIGNAL.CLICK_CHANGE_SETTING)
+            # q.c_queue.put((identify_default_time, frame_default_number))
             logger.info('辨識登入門檻值設定變更成功')
             return '變更成功'
         
@@ -120,7 +124,7 @@ class FaceMain:
                 area_json = request.get_json()
                 fbackend.save_fence_coord(area_json, globalvar.cam_wh)
                 facevar.fence_setting = (fbackend.get_fence_enable(), fbackend.get_cam_areas())
-                q.c_queue.put((FaceVar.SIGNAL.UPDATE_FENCE, facevar))
+                # q.c_queue.put((FaceVar.SIGNAL.UPDATE_FENCE, facevar))
                 logger.info('虛擬圍籬設定成功')
                 return '成功儲存圍籬區域!'
             except Exception as e:                
@@ -269,7 +273,8 @@ class FaceMain:
 
                 new_features = fbackend.delete_base_img(remove_baseuser_list)
                 print(new_features[0][1])
-                q.c_queue.put(FaceVar.SIGNAL.RELOAD_FRATURE) # 讓辨識人臉的 process 更新成新的 feature
+                # q.c_queue.put(FaceVar.SIGNAL.RELOAD_FRATURE) # 讓辨識人臉的 process 更新成新的 feature
+                self.faceTool.init_detector_object()
                 logger.info('已訓練的人臉照片資料 刪除成功')
                 return 'success'
             except Exception as e:
@@ -314,33 +319,33 @@ class FaceMain:
         @app_face.route('/impose_unlock', methods=['POST'])  
         def impose_unlock():
             try:
-                q.c_queue.put(FaceVar.SIGNAL.UNLOCK_DOOR)
+                # q.c_queue.put(FaceVar.SIGNAL.UNLOCK_DOOR)
+                self.faceTool.unlock_door()
                 logger.info('門禁解鎖成功')
                 return 'success'
             except Exception as e:
                 logger.error(f'門禁解鎖失敗, {e}')
                 return 'error'
 
-        #======================= 控制 辨識的 Process ============================#
-        @app_face.route("/control_detect_process/<action>", methods=['GET'])
-        def control_detect_process(action):
-            # 人臉管制 頁面的「Login」按鈕
-            if action == 'click_login':
-                if not globalvar.click_start:
-                    q.c_queue.put(FaceVar.SIGNAL.CLICK_LOGIN)
-                    q.c_queue.join()
-                    globalvar.click_start = True
-                    logger.info('人臉:開始辨識')
+        # #======================= 控制 辨識的 Process ============================#
+        # @app_face.route("/control_detect_process/<action>", methods=['GET'])
+        # def control_detect_process(action):
+        #     # 人臉管制 頁面的「Login」按鈕
+        #     if action == 'click_login':
+        #         if not globalvar.click_start:
+        #             q.c_queue.put(FaceVar.SIGNAL.CLICK_LOGIN)
+        #             q.c_queue.join()
+        #             globalvar.click_start = True
+        #             logger.info('人臉:開始辨識')
 
-            # 人臉管制 頁面的「Reload」按鈕
-            elif action == 'click_reload':
-                globalvar.click_start = False
-                q.c_queue.put(FaceVar.SIGNAL.CLICK_RELOAD)
-                logger.info('人臉:停止辨識')
-                return '已停止辨識...'
+        #     # 人臉管制 頁面的「Reload」按鈕
+        #     elif action == 'click_reload':
+        #         globalvar.click_start = False
+        #         q.c_queue.put(FaceVar.SIGNAL.CLICK_RELOAD)
+        #         logger.info('人臉:停止辨識')
+        #         return '已停止辨識...'
 
-
-            return '控制 辨識process 成功!'
+        #     return '控制 辨識process 成功!'
             
 
         return app_face

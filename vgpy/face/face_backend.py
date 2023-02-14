@@ -274,74 +274,35 @@ class FaceDetectorTool:
         self.facevar = facevar
         self.face_detector = FaceDetector(self.facevar, self.globalvar)
         self.face_start_time = datetime.now()
-
     
-    def face_detect_init(self):
-        
-        from vgpy.utils.logger import create_logger
-        logger = create_logger()
 
-        from .face_api import FaceVar
-        facevar = FaceVar()
-        face_detector = FaceDetector(facevar, self.globalvar)
-        self.q.c_queue.put('init done')
-        self.q.c_queue.task_done()
+    @staticmethod
+    def unlock_door():
+        door_unlock()
 
-        while True:
-            if not self.q.c_queue.empty():
-                signal = self.q.c_queue.get(block=False)
-                if type(signal) is tuple:
-                    signal, value = signal
-                    if signal is FaceVar.SIGNAL.UPDATE_FENCE:
-                        new_facevar = value
-                        facevar.fence_setting = new_facevar.fence_setting
-                
-                try:
-                    logger.info(f'人臉:收到[{signal.name}]的signal')
-                except:
-                    pass
 
-                if signal is FaceVar.SIGNAL.CLICK_CHANGE_SETTING:
-                    # 更新辨識設定 (辨識的frame數、時間限制)
-                    data = self.q.c_queue.get()
-                    if type(data) == tuple:
-                        self.identify_default_time, self.frame_default_number = data
-                    self.q.c_queue.task_done()
-                    
-                elif signal is FaceVar.SIGNAL.UNLOCK_DOOR:
-                    door_unlock()
+    # 更新辨識設定 (辨識的frame數、時間限制)
+    def set_default_time_and_num(self, identify_default_time, frame_default_number):
+        self.identify_default_time, self.frame_default_number = identify_default_time, frame_default_number
 
-                elif signal is FaceVar.SIGNAL.CLICK_RELOAD or \
-                    signal is FaceVar.SIGNAL.RELOAD_FRATURE:
-                    # 按下 Reload 按鈕 或 有更新特徵(例如刪除人員 或訓練新的人員)，要初始化參數
-                    face_detector.detect_face_init()
 
-                elif signal is GlobalVar.SIGNAL.END_PROCESS:
-                    # 流程結束
-                    break
+    def init_detector_object(self):
+        self.face_detector.detect_face_init()
 
-                self.q.c_queue.task_done()
-                continue
 
-    def app_face_start(self):
-        # 開始人臉辨識
-        try:
-            current_process = Thread(target=self.face_detect_init, daemon=True)
-            current_process.start()
-        except Exception as e:
-            print(e)
-        logger.info('人臉: subprocess啟動')
-        self.q.c_queue.get() # 卡在這等 subprocess 內的模型讀取完成
-        return current_process
+    def change_cam_id(self, camId, camWH):
+        self.facevar.cam_id = camId
+        self.facevar.cam_wh = camWH
     
+
     def get_detection_result(self, img):
-
+        
         startTime = time.time()
 
         from .face_api import FaceVar
 
         result_img, im0, result_landmark_img = self.face_detector.detect_face(img)
- 
+        
         face_identify_result = None
       
         now_time = datetime.now()
